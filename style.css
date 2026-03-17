@@ -1,0 +1,378 @@
+/*
+Theme Name:   EUF Training Week
+Theme URI:    https://uni-foundation.eu
+Description:  DIVI child theme for EUF Trainings
+Author:       EUF
+Template:     Divi
+Version:      1.0.3
+*/
+
+
+/* FONTS */
+
+
+/* GONTSERRAT - HEADINGS */
+/* THIN 100 */
+@font-face {
+  font-family: 'Gontserrat';
+  src:
+    url('fonts/Gontserrat-Thin.woff2') format('woff2'),
+    url('fonts/Gontserrat-Thin.woff') format('woff'),
+    url('fonts/Gontserrat-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gontserrat';
+  src:
+    url('fonts/Gontserrat-Thin-Italic.woff2') format('woff2'),
+    url('fonts/Gontserrat-Thin-Italic.woff') format('woff'),
+    url('fonts/Gontserrat-Thin-Italic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* EXTRA LIGHT */
+@font-face {
+  font-family: 'Gontserrat';
+  src:
+    url('fonts/Gontserrat-ExtraLight.woff2') format('woff2'),
+    url('fonts/Gontserrat-ExtraLight.woff') format('woff'),
+    url('fonts/Gontserrat-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gontserrat';
+  src:
+    url('fonts/Gontserrat-ExtraLight-Italic.woff2') format('woff2'),
+    url('fonts/Gontserrat-ExtraLight-Italic.woff') format('woff'),
+    url('fonts/Gontserrat-ExtraLight-Italic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* LIGHT 300 */
+@font-face {
+  font-family: 'Gontserrat';
+  src:
+    url('fonts/Gontserrat-Light.woff2') format('woff2'),
+    url('fonts/Gontserrat-Light.woff') format('woff'),
+    url('fonts/Gontserrat-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gontserrat';
+  src:
+    url('fonts/Gontserrat-Light-Italic.woff2') format('woff2'),
+    url('fonts/Gontserrat-Light-Italic.woff') format('woff'),
+    url('fonts/Gontserrat-Light-Italic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* REGULAR 400 */
+@font-face {
+  font-family: 'Gontserrat';
+  src:
+    url('fonts/Gontserrat-Regular.woff2') format('woff2'),
+    url('fonts/Gontserrat-Regular.woff') format('woff'),
+    url('fonts/Gontserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gontserrat';
+  src:
+    url('fonts/Gontserrat-Italic.woff2') format('woff2'),
+    url('fonts/Gontserrat-Italic.woff') format('woff'),
+    url('fonts/Gontserrat-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* MEDIUM 500 */
+@font-face {
+  font-family: 'Gontserrat';
+  src:
+    url('fonts/Gontserrat-Medium.woff2') format('woff2'),
+    url('fonts/Gontserrat-Medium.woff') format('woff'),
+    url('fonts/Gontserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gontserrat';
+  src:
+    url('fonts/Gontserrat-Medium-Italic.woff2') format('woff2'),
+    url('fonts/Gontserrat-Medium-Italic.woff') format('woff'),
+    url('fonts/Gontserrat-Medium-Italic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* SEMIBOLD 600 */
+@font-face {
+  font-family: 'Gontserrat';
+  src:
+    url('fonts/Gontserrat-SemiBold.woff2') format('woff2'),
+    url('fonts/Gontserrat-SemiBold.woff') format('woff'),
+    url('fonts/Gontserrat-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gontserrat';
+  src:
+    url('fonts/Gontserrat-SemiBold-Italic.woff2') format('woff2'),
+    url('fonts/Gontserrat-SemiBold-Italic.woff') format('woff'),
+    url('fonts/Gontserrat-SemiBold-Italic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* BOLD 700 */
+@font-face {
+  font-family: 'Gontserrat';
+  src:
+    url('fonts/Gontserrat-Bold.woff2') format('woff2'),
+    url('fonts/Gontserrat-Bold.woff') format('woff'),
+    url('fonts/Gontserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gontserrat';
+  src:
+    url('fonts/Gontserrat-Bold-Italic.woff2') format('woff2'),
+    url('fonts/Gontserrat-Bold-Italic.woff') format('woff'),
+    url('fonts/Gontserrat-Bold-Italic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* EXTRA BOLD 800 */
+@font-face {
+  font-family: 'Gontserrat';
+  src:
+    url('fonts/Gontserrat-ExtraBold.woff2') format('woff2'),
+    url('fonts/Gontserrat-ExtraBold.woff') format('woff'),
+    url('fonts/Gontserrat-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gontserrat';
+  src:
+    url('fonts/Gontserrat-ExtraBold-Italic.woff2') format('woff2'),
+    url('fonts/Gontserrat-ExtraBold-Italic.woff') format('woff'),
+    url('fonts/Gontserrat-ExtraBold-Italic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* BLACK 900 */
+@font-face {
+  font-family: 'Gontserrat';
+  src:
+    url('fonts/Gontserrat-Black.woff2') format('woff2'),
+    url('fonts/Gontserrat-Black.woff') format('woff'),
+    url('fonts/Gontserrat-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gontserrat';
+  src:
+    url('fonts/Gontserrat-Black-Italic.woff2') format('woff2'),
+    url('fonts/Gontserrat-Black-Italic.woff') format('woff'),
+    url('fonts/Gontserrat-Black-Italic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* OPEN SANS - TEXT */
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/wp-content/themes/Trainings/fonts/OpenSans-VariableFont_wdth,wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/wp-content/themes/Trainings/fonts/OpenSans-Italic-VariableFont_wdth,wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+
+/* STYLING */
+
+#main-content {
+	background-color: #ffffff!important;
+}
+
+body { font-family: 'Open Sans', sans-serif; }
+
+/* MENU */
+#main-header, 
+header .et-fixed-header, .et-fixed-header#main-header {
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25)!important;
+}
+
+.et-fixed-header#main-header {
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25)!important;
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3, h4, h5, h6, .et_pb_button, nav {
+	font-family: Gontserrat, Montserrat, Poppins, 'Nunito Sans', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;	
+}
+
+h1 {
+font-size: 40px;
+}
+
+#homepage-top h1 {
+		font-size: clamp(4em, 10vw,8em);
+}
+
+h2, h3, h4, h5, h6 {
+	line-height: 1.4!important;
+}
+
+h2 {
+	font-size: 2.5em;
+	font-weight: 700;
+}
+
+nav {
+	font-weight: 500;
+}
+
+h1, h2, h3, h4, h5, h6, nav {
+	text-transform: uppercase;
+}
+
+p {
+	color: #333333;
+}
+
+p a {
+	text-decoration: underline;
+}
+
+p a:hover, p a:active {
+	text-decoration: underline;
+	text-decoration-color: #FAB31E;
+}
+
+ .black-text p, .black-text h1, .black-text h2, .black-text h3, .black-text h4, .black-text h5, .black-text h6 {
+	color: #000000;
+}
+
+.white-text p {
+	color: #ffffff;
+}
+
+
+/* THREE training boxes on homepage */
+a.training_button:hover, a.training_button:active {
+	text-decoration: none;
+}
+
+.training_button .et_pb_button:hover, .training_button .et_pb_button:active {
+		border: 2px solid #1A1A1A!important;
+	background-color: #1A1A1A!important;
+	color: #ffffff!important;
+}
+
+a.training_button {
+	text-decoration: none;
+}
+
+.et_pb_button {
+	padding: 5px 10px;
+}
+
+
+/* MENU */
+header.et-fixed-header #main-header {
+    box-shadow: 0 0 7px rgba(0,0,0,0.2) !important;
+}
+
+ul#mobile_menu1.et_mobile_menu {
+min-width: 250px!important;
+  margin-left: -100px!important;
+  margin-right: auto!important;
+}
+
+ul#mobile_menu1.et_mobile_menu li {
+	line-height: 1.4;
+}
+
+ul#mobile_menu1.et_moblie_menu li a {
+	padding: 5px 5%!important;
+}
+
+
+/* Safari bg overlay fix */
+div.euft-overlay
+{
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* Add CSS parallax for Desktop only */
+/* Base behaviour: normal static background everywhere */
+.desktop-parallax {
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* Desktop only: fake "CSS parallax" with background-attachment: fixed */
+@media (hover: hover) and (pointer: fine) {
+  .desktop-parallax {
+    background-attachment: fixed;
+  }
+}
+
+
+
+/* FOOTER */
+/* BLUESKY begin*/ 
+/* replace the 4th icon in SM follow module in footer with FA bsky icon */
+
+
+/* Turn the BEHANCE icon into a Bluesky icon in Social Media Follow module */
+.et_pb_social_media_follow .et-social-behance a.icon:before {
+    content: url(https://training.uni-foundation.eu/wp-content/uploads/2025/12/Bluesky_Logo_grey-v4.svg) !important;
+	color: #DDDDDD;
+  padding-top: 3px;
+	padding-left: 6px;
+	max-width: 18px;
+}
