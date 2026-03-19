@@ -2,6 +2,14 @@
 function euf_enqueue_styles() {
     $theme = wp_get_theme();
 
+    // Parent style
+    wp_enqueue_style(
+        'divi-style',
+        get_template_directory_uri() . '/style.css',
+        array(),
+        $theme->get('Version')
+    );
+
     // Child main style
     wp_enqueue_style(
         'child-style',
