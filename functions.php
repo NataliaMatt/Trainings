@@ -64,3 +64,51 @@ remove_action('template_redirect', 'rest_output_link_header', 11);
 ini_set('upload_max_filesize', '64M');
 ini_set('post_max_size', '64M');
 ini_set('max_execution_time', '300');
+
+//Silktide Cookies
+function my_enqueue_silktide_assets() {
+    wp_enqueue_style(
+        'silktide-css',
+        get_stylesheet_directory_uri() . '/assets/silktide-consent-manager.css',
+        array(),
+        '1.0'
+    );
+
+    wp_enqueue_script(
+        'silktide-js',
+        get_stylesheet_directory_uri() . '/assets/silktide-consent-manager.js',
+        array(),
+        '1.0',
+        true // load in footer
+    );
+}
+add_action('wp_enqueue_scripts', 'my_enqueue_silktide_assets');
+
+//Silktide Cookies - Initialize the consent manager
+function my_silktide_config() {
+    $config = "
+    silktideCookieBannerManager.updateCookieBannerConfig({
+      cookieTypes: [
+        {
+          id: 'essential',
+          name: 'Essential cookies',
+          description: 'These are required for the website to function.',
+          required: true,
+          defaultValue: true
+        },
+        {
+          id: 'analytics',
+          name: 'Analytics cookies',
+          description: 'Help us understand how visitors use the site.',
+          defaultValue: false
+        }
+      ],
+      position: {
+        banner: 'bottomCenter'
+      }
+    });
+    ";
+
+    wp_add_inline_script('silktide-js', $config);
+}
+add_action('wp_enqueue_scripts', 'my_silktide_config');
