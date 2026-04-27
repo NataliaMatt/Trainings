@@ -65,8 +65,12 @@ ini_set('upload_max_filesize', '64M');
 ini_set('post_max_size', '64M');
 ini_set('max_execution_time', '300');
 
-//Silktide Cookies
+
+
+
+// Silktide Consent Manager
 function my_enqueue_silktide_assets() {
+
     wp_enqueue_style(
         'silktide-css',
         get_stylesheet_directory_uri() . '/assets/silktide-consent-manager.css',
@@ -79,36 +83,35 @@ function my_enqueue_silktide_assets() {
         get_stylesheet_directory_uri() . '/assets/silktide-consent-manager.js',
         array(),
         '1.0',
-        true // load in footer
+        true
     );
+
+    wp_add_inline_script('silktide-js', "
+        window.silktideConsentManager.init({
+            consentTypes: [
+                {
+                    id: 'essential',
+                    label: 'Essential',
+                    description: 'These are necessary for the website to function and cannot be switched off.',
+                    required: true
+                },
+                {
+                    id: 'analytics',
+                    label: 'Analytics',
+                    description: 'These help us understand how visitors interact with the website.',
+                    defaultValue: false
+                },
+                {
+                    id: 'functional',
+                    label: 'Functional',
+                    description: 'Enable embedded content like YouTube videos.',
+                    defaultValue: false
+                }
+            ],
+            prompt: {
+                position: 'bottomCenter'
+            }
+        });
+    ");
 }
 add_action('wp_enqueue_scripts', 'my_enqueue_silktide_assets');
-
-//Silktide Cookies - Initialize the consent manager
-function my_silktide_config() {
-    $config = "
-    silktideCookieBannerManager.updateCookieBannerConfig({
-      cookieTypes: [
-        {
-          id: 'essential',
-          name: 'Essential cookies',
-          description: 'These are required for the website to function.',
-          required: true,
-          defaultValue: true
-        },
-        {
-          id: 'analytics',
-          name: 'Analytics cookies',
-          description: 'Help us understand how visitors use the site.',
-          defaultValue: false
-        }
-      ],
-      position: {
-        banner: 'bottomCenter'
-      }
-    });
-    ";
-
-    wp_add_inline_script('silktide-js', $config);
-}
-add_action('wp_enqueue_scripts', 'my_silktide_config');
