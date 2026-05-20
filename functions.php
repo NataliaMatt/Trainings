@@ -64,3 +64,29 @@ remove_action('template_redirect', 'rest_output_link_header', 11);
 ini_set('upload_max_filesize', '64M');
 ini_set('post_max_size', '64M');
 ini_set('max_execution_time', '300');
+
+// Inviton: make "Do you wish an invoice?" checkbox checked by default
+add_action( 'wp_footer', function () {
+    ?>
+    <script>
+    (function () {
+        var seen = false;
+
+        var observer = new MutationObserver(function () {
+            if ( seen ) return;
+
+            var cb = document.querySelector('input[data-inv-role="orderShowInvoicingData"]');
+
+            if ( cb ) {
+                seen = true;
+                cb.checked = true;
+                cb.dispatchEvent( new Event( 'change', { bubbles: true } ) );
+                cb.dispatchEvent( new Event( 'input',  { bubbles: true } ) );
+            }
+        });
+
+        observer.observe( document.body, { childList: true, subtree: true } );
+    })();
+    </script>
+    <?php
+} );
